@@ -1,0 +1,115 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Welcome to my blog\n\n\n\nnews\n\n\n\nWhat I’ll write about here.\n\n\n\n\n\nOct 11, 2026\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Blog"
+    ]
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "A directory of my data science projects. Click a card to see the full write-up, or use the categories on the right to filter.\n\n\n\n\n\n\n\n\n\n\n\nExample Project 1\n\n\n\nR\n\ntidyr\n\nPostgreSQL\n\n\n\nOne-sentence summary of what this project does.\n\n\n\nOct 10, 2026\n\n\n\n\n\n\n\n\n\n\nExample Project 2\n\n\n\nR\n\ndplyr\n\nggplot2\n\n\n\nOne-sentence summary of what this project does.\n\n\n\nOct 9, 2026\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Projects"
+    ]
+  },
+  {
+    "objectID": "projects/example-project-1.html",
+    "href": "projects/example-project-1.html",
+    "title": "Example Project 1",
+    "section": "",
+    "text": "Describe the question you asked and the data you used."
+  },
+  {
+    "objectID": "projects/example-project-1.html#overview",
+    "href": "projects/example-project-1.html#overview",
+    "title": "Example Project 1",
+    "section": "",
+    "text": "Describe the question you asked and the data you used."
+  },
+  {
+    "objectID": "projects/example-project-1.html#example-code",
+    "href": "projects/example-project-1.html#example-code",
+    "title": "Example Project 1",
+    "section": "Example code",
+    "text": "Example code"
+  },
+  {
+    "objectID": "projects/example-project-1.html#results",
+    "href": "projects/example-project-1.html#results",
+    "title": "Example Project 1",
+    "section": "Results",
+    "text": "Results\nAdd your tables and plots here."
+  },
+  {
+    "objectID": "projects/example-project-1.html#links",
+    "href": "projects/example-project-1.html#links",
+    "title": "Example Project 1",
+    "section": "Links",
+    "text": "Links\n\nSource code on GitHub"
+  },
+  {
+    "objectID": "posts/welcome.html",
+    "href": "posts/welcome.html",
+    "title": "Welcome to my blog",
+    "section": "",
+    "text": "This is my first post. I’ll use this space to write about what I’m learning in data science: tidying messy data, working with databases, and building reports in Quarto."
+  },
+  {
+    "objectID": "projects/example-project-2.html",
+    "href": "projects/example-project-2.html",
+    "title": "Example Project 2",
+    "section": "",
+    "text": "Describe the question you asked and the data you used."
+  },
+  {
+    "objectID": "projects/example-project-2.html#overview",
+    "href": "projects/example-project-2.html#overview",
+    "title": "Example Project 2",
+    "section": "",
+    "text": "Describe the question you asked and the data you used."
+  },
+  {
+    "objectID": "projects/example-project-2.html#results",
+    "href": "projects/example-project-2.html#results",
+    "title": "Example Project 2",
+    "section": "Results",
+    "text": "Results\n\n\nCode\nlibrary(ggplot2)\nggplot(mtcars, aes(wt, mpg)) + geom_point() + theme_minimal()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi, I’m Ellie. I turn messy, real-world datasets into clean, documented analyses using R, SQL, and tidy data principles.\nGitHub LinkedIn",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html#skills",
+    "href": "index.html#skills",
+    "title": "About",
+    "section": "Skills",
+    "text": "Skills\n\nLanguages: R, SQL\nTools: Quarto, tidyverse, PostgreSQL, Git/GitHub",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "About",
+    "section": "Contact",
+    "text": "Contact\nAdd your email or other contact info here.",
+    "crumbs": [
+      "About"
+    ]
+  }
+]
