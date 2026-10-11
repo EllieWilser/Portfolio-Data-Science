@@ -1,0 +1,12 @@
+---
+title: "Projects"
+listing:
+  contents: projects
+  type: grid
+  sort: "date desc"
+  categories: true
+  fields: [title, description, categories, date]
+---
+
+A directory of my data science projects. Click a card to see the full write-up,
+or use the categories on the right to filter.

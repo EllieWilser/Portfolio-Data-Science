@@ -1,0 +1,10 @@
+---
+title: "Welcome to my blog"
+description: "What I'll write about here."
+date: 2026-10-11
+categories: [news]
+---
+
+This is my first post. I'll use this space to write about what I'm learning in
+data science: tidying messy data, working with databases, and building
+reports in Quarto.

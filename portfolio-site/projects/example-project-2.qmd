@@ -1,0 +1,18 @@
+---
+title: "Example Project 2"
+description: "One-sentence summary of what this project does."
+date: 2026-10-09
+categories: [R, dplyr, ggplot2]
+---
+
+## Overview
+
+Describe the question you asked and the data you used.
+
+## Results
+
+```{r}
+#| echo: true
+library(ggplot2)
+ggplot(mtcars, aes(wt, mpg)) + geom_point() + theme_minimal()
+```
