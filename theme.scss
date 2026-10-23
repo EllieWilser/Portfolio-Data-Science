@@ -44,10 +44,3 @@ $headings-font-family: "Fraunces", Georgia, serif;
 }
 .sidebar-navigation .sidebar-item-toggle { color: $body-color; }
 .sidebar-tools-main .quarto-navigation-tool { font-size: 1.15rem; }
-
-// Name on the About page matches the sidebar
-.quarto-about-solana .about-entity h1.title,
-#title-block-header h1.title {
-  font-family: $font-family-sans-serif;
-  font-weight: 600;
-}
