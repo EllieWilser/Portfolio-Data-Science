@@ -1,0 +1,40 @@
+---
+title: "Resume"
+---
+
+<!--
+To offer a downloadable PDF: save it in this folder as resume.pdf, then
+uncomment the line below.
+
+[Download PDF](resume.pdf){.btn .btn-primary}
+-->
+
+## Experience
+
+**Job Title** · Company · City \
+*Month Year – Present*
+
+- What you did, with a number if you have one (e.g. "cut reporting time by 40%").
+- A tool or method you used and what it achieved.
+
+**Job Title** · Company · City \
+*Month Year – Month Year*
+
+- Accomplishment.
+- Accomplishment.
+
+## Education
+
+**Degree, Field** · School \
+*Year*
+
+- Relevant coursework, e.g. DATA 607: Data Acquisition and Management.
+
+## Skills
+
+- **Languages:** R, SQL
+- **Tools:** Quarto, tidyverse, PostgreSQL, Git/GitHub
+
+## Certifications
+
+- Certification name · Issuer · Year

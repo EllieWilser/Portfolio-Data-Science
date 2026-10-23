@@ -55,6 +55,61 @@
     "text": "Links\n\nSource code on GitHub"
   },
   {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Job Title · Company · City\nMonth Year – Present\n\nWhat you did, with a number if you have one (e.g. “cut reporting time by 40%”).\nA tool or method you used and what it achieved.\n\nJob Title · Company · City\nMonth Year – Month Year\n\nAccomplishment.\nAccomplishment.",
+    "crumbs": [
+      "About",
+      "Resume"
+    ]
+  },
+  {
+    "objectID": "resume.html#experience",
+    "href": "resume.html#experience",
+    "title": "Resume",
+    "section": "",
+    "text": "Job Title · Company · City\nMonth Year – Present\n\nWhat you did, with a number if you have one (e.g. “cut reporting time by 40%”).\nA tool or method you used and what it achieved.\n\nJob Title · Company · City\nMonth Year – Month Year\n\nAccomplishment.\nAccomplishment.",
+    "crumbs": [
+      "About",
+      "Resume"
+    ]
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Resume",
+    "section": "Education",
+    "text": "Education\nDegree, Field · School\nYear\n\nRelevant coursework, e.g. DATA 607: Data Acquisition and Management.",
+    "crumbs": [
+      "About",
+      "Resume"
+    ]
+  },
+  {
+    "objectID": "resume.html#skills",
+    "href": "resume.html#skills",
+    "title": "Resume",
+    "section": "Skills",
+    "text": "Skills\n\nLanguages: R, SQL\nTools: Quarto, tidyverse, PostgreSQL, Git/GitHub",
+    "crumbs": [
+      "About",
+      "Resume"
+    ]
+  },
+  {
+    "objectID": "resume.html#certifications",
+    "href": "resume.html#certifications",
+    "title": "Resume",
+    "section": "Certifications",
+    "text": "Certifications\n\nCertification name · Issuer · Year",
+    "crumbs": [
+      "About",
+      "Resume"
+    ]
+  },
+  {
     "objectID": "posts/welcome.html",
     "href": "posts/welcome.html",
     "title": "Welcome to my blog",
@@ -85,9 +140,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "About",
+    "title": "Ellie Wilser",
     "section": "",
-    "text": "Hi, I’m Ellie. I turn messy, real-world datasets into clean, documented analyses using R, SQL, and tidy data principles.\nGitHub LinkedIn",
+    "text": "Hi, I’m Ellie. I turn messy, real-world datasets into clean, documented analyses using R, SQL, and tidy data principles.",
     "crumbs": [
       "About"
     ]
@@ -95,7 +150,7 @@
   {
     "objectID": "index.html#skills",
     "href": "index.html#skills",
-    "title": "About",
+    "title": "Ellie Wilser",
     "section": "Skills",
     "text": "Skills\n\nLanguages: R, SQL\nTools: Quarto, tidyverse, PostgreSQL, Git/GitHub",
     "crumbs": [
@@ -105,7 +160,7 @@
   {
     "objectID": "index.html#contact",
     "href": "index.html#contact",
-    "title": "About",
+    "title": "Ellie Wilser",
     "section": "Contact",
     "text": "Contact\nAdd your email or other contact info here.",
     "crumbs": [

@@ -6,10 +6,14 @@ website:
   title: "Ellie Wilser"
   sidebar:
     style: docked
-    search: true
+    search: false
+    collapse-level: 1
     contents:
-      - href: index.qmd
-        text: About
+      - section: "About"
+        href: index.qmd
+        contents:
+          - href: resume.qmd
+            text: Resume
       - href: projects.qmd
         text: Projects
       - href: blog.qmd
@@ -24,10 +28,7 @@ website:
 
 format:
   html:
-    theme:
-      light: flatly
-      dark: darkly
-    css: styles.css
+    theme: [zephyr, theme.scss]
     code-fold: true
     link-external-newwindow: true
 

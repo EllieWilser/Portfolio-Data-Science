@@ -1,20 +1,13 @@
 ---
-title: "About"
+title: "Ellie Wilser"
+subtitle: "Data Analyst · R · SQL"
+pagetitle: "About"
+about:
+  template: solana
 ---
 
-::::: columns
-::: {.column width="25%"}
-![](headshot.jpeg){.headshot fig-alt="Headshot of Ellie Wilser"}
-:::
-
-::: {.column width="75%"}
 Hi, I'm Ellie. I turn messy, real-world datasets into clean, documented
 analyses using R, SQL, and tidy data principles.
-
-[GitHub](https://github.com/EllieWilser){.btn .btn-dark .btn-sm}
-[LinkedIn](https://www.linkedin.com/in/your-profile){.btn .btn-primary .btn-sm}
-:::
-:::::
 
 ## Skills
 
