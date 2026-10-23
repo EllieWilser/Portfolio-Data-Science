@@ -1,13 +1,13 @@
 /*-- scss:defaults --*/
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=DM+Sans:wght@400;600&display=swap');
 
-$accent: #8c2f39;
-
 $body-bg: #fbf6ef;
 $body-color: #3b2f2a;
 $primary: #c2410c;
 $link-color: #c2410c;
 $font-family-sans-serif: "DM Sans", system-ui, sans-serif;
+$sidebar-bg: #f5eee4;
+$accent: $primary;
 $headings-font-family: "Fraunces", Georgia, serif;
 
 /*-- scss:rules --*/
@@ -21,9 +21,9 @@ $headings-font-family: "Fraunces", Georgia, serif;
   gap: .4rem;
 
   > a {
-    font-family: $headings-font-family;
-    font-weight: 800;
-    font-size: 1.5rem;
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
     color: $body-color;
   }
 }
@@ -44,3 +44,10 @@ $headings-font-family: "Fraunces", Georgia, serif;
 }
 .sidebar-navigation .sidebar-item-toggle { color: $body-color; }
 .sidebar-tools-main .quarto-navigation-tool { font-size: 1.15rem; }
+
+// Name on the About page matches the sidebar
+.quarto-about-solana .about-entity h1.title,
+#title-block-header h1.title {
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+}
