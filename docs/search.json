@@ -81,7 +81,7 @@
     "href": "resume.html#education",
     "title": "Resume",
     "section": "Education",
-    "text": "Education\nM.S., Data Science · School\nAugust 2026 – December 2029 (expected)\n\nResearch focus: physics-informed machine learning.\nCoursework: DATA 607, Data Acquisition and Management.\n\nB.S., Data Science · Indiana University\nGraduated Year\n\nGPA: 3.7\nOutstanding Student in Data Science award.",
+    "text": "Education\nM.S., Data Science · CUNY School of Professional Studies\nAugust 2026 – December 2029 (expected)\n\nResearch focus: physics-informed machine learning.\nCoursework: DATA 607, Data Acquisition and Management.\n\nB.S., Data Science · Indiana University East\nDecember 2024\n\nGPA: 3.7\nOutstanding Student in Data Science award.",
     "crumbs": [
       "About",
       "Resume"
@@ -92,7 +92,7 @@
     "href": "resume.html#skills",
     "title": "Resume",
     "section": "Skills",
-    "text": "Skills\n\nLanguages: R, SQL\nTools: Quarto, tidyverse, PostgreSQL, Git/GitHub",
+    "text": "Skills\n\nLanguages: R, Python, SQL\nPython: pandas, scikit-learn, TensorFlow, PyTorch\nR: tidyverse, Quarto\nMachine learning: physics-informed neural networks (PINNs)\nData and visualization: Tableau, Excel, PostgreSQL\nWorkflow: Git/GitHub, Google Workspace automation\nSustainability: GHG Protocol (Scope 1, 2 and 3 accounting), GRI Standards",
     "crumbs": [
       "About",
       "Resume"

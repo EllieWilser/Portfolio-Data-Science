@@ -29,22 +29,27 @@ uncomment the line below.
 
 ## Education
 
-**M.S., Data Science** · School \
+**M.S., Data Science** · CUNY School of Professional Studies \
 *August 2026 – December 2029 (expected)*
 
 - Research focus: physics-informed machine learning.
 - Coursework: DATA 607, Data Acquisition and Management.
 
-**B.S., Data Science** · Indiana University \
-*Graduated Year*
+**B.S., Data Science** · Indiana University East \
+*December 2024*
 
 - GPA: 3.7
 - Outstanding Student in Data Science award.
 
 ## Skills
 
-- **Languages:** R, SQL
-- **Tools:** Quarto, tidyverse, PostgreSQL, Git/GitHub
+- **Languages:** R, Python, SQL
+- **Python:** pandas, scikit-learn, TensorFlow, PyTorch
+- **R:** tidyverse, Quarto
+- **Machine learning:** physics-informed neural networks (PINNs)
+- **Data and visualization:** Tableau, Excel, PostgreSQL
+- **Workflow:** Git/GitHub, Google Workspace automation
+- **Sustainability:** GHG Protocol (Scope 1, 2 and 3 accounting), GRI Standards
 
 ## Certifications
 
