@@ -1,19 +1,59 @@
 ---
 title: "Ellie Wilser"
-subtitle: "Data Analyst · R · SQL"
+subtitle: "Sustainability · Data Science · Automation"
 pagetitle: "About"
 about:
   template: solana
 ---
 
-Hi, I'm Ellie. I turn messy, real-world datasets into clean, documented
-analyses using R, SQL, and tidy data principles.
+I'm a sustainability analyst working where healthcare sustainability meets data
+science. At The Resource Group, an Ascension subsidiary, I lead data management
+for Ascension's sustainability program. I calculate Scope 1, 2 and 3 emissions,
+build dashboards that help sites track their progress, and automate the review
+and auditing work behind our reporting.
+
+I'm passionate about sustainability, and I believe good data is what turns
+sustainability goals into measurable progress. My favorite work is finding the
+slow, manual process everyone has learned to live with, and rebuilding it so
+it's faster, more accurate, and easier to trust.
+
+## What I'm exploring
+
+In my M.S. in Data Science at CUNY School of Professional Studies, I'm focused
+on **physics-informed machine learning**: models that combine the physical laws
+behind a system with real-world data, so they stay reliable even when data is
+limited. These models are a natural fit for complex systems like buildings,
+where both the physics and the data matter.
+
+I'm especially interested in using them to build **digital twins**, virtual
+copies of real buildings and systems. A digital twin lets you test a
+sustainability project before spending money on it. Projects I'd like to model
+include:
+
+- **HVAC upgrades and control strategies**, such as scheduling and setpoint changes
+- **Building envelope improvements**, like insulation, windows and roofing
+- **Solar and battery storage sizing**
+- **Energy demand forecasting and load shifting** to lower peak usage and emissions
+- **Central plant optimization**, such as chillers, boilers and water use
+
+Healthcare facilities are among the most energy-intensive buildings, and they
+run 24/7. That makes them a high-impact place to get these decisions right.
+
+## Highlights
+
+- Cut proxy data in a carbon emissions inventory by **83%** by building a Python
+  process that matches utility accounts to property accounts.
+- Named **Outstanding Student in Data Science** at Indiana University East.
+- Lead data management for Ascension's sustainability program: emissions
+  accounting, dashboards, and automated data auditing.
+
+[View my full resume →](resume.qmd)
 
 ## Skills
 
-- **Languages:** R, SQL
-- **Tools:** Quarto, tidyverse, PostgreSQL, Git/GitHub
+R · Python · SQL · Tableau · Power BI · BigQuery · PyTorch · TensorFlow ·
+GHG Protocol · GRI Standards
 
 ## Contact
 
-Add your email or other contact info here.
+[elliewilser@gmail.com](mailto:elliewilser@gmail.com)
