@@ -11,21 +11,33 @@ uncomment the line below.
 
 ## Experience
 
-**Sustainability Analyst (Data Management Lead)** · The Resource Group · Remote \
+**Sustainability Analyst (Data Management Lead)** · The Resource Group (Ascension) · Remote \
 *January 2025 – Present*
 
-- Lead data management for the Environmental Impact Office, the company's
-  sustainability team.
-- Reduced proxy data in the carbon emissions inventory by 83% from baseline by
-  building a Python process that matches utility accounts to property accounts.
-- Calculate Scope 1, 2 and 3 greenhouse gas emissions and maintain audit-ready
-  emissions reporting.
-- Build dashboards and visualizations that give site-level teams visibility into
-  their sustainability metrics and drive friendly competition between sites.
-- Automate data review, data auditing and recurring Google Workspace tasks to
-  cut manual work.
+- Lead data management for Ascension's sustainability program across more than
+  75 hospitals and over 400 sites.
+- Reduced proxy data in the carbon emissions inventory by **83%** from baseline,
+  replacing estimates with activity data to improve the accuracy of emissions
+  tracking:
+  - Built a Python matching process that linked about 7,000 utility accounts to
+    their properties using addresses, account numbers, ZIP codes, meter IDs and
+    custom string-matching rules.
+  - Sourced activity data for mobile fleet operations, and for district steam
+    and chilled water directly from the provider.
+- Calculate Scope 1, 2 and 3 greenhouse gas emissions, capturing **12 of 15
+  Scope 3 categories**: every category relevant to hospital operations.
+- Forecast carbon emissions with time series models and presented the results
+  to leadership to inform planning for a power purchase agreement (PPA).
+- Built a Tableau waste dashboard used by Environment of Care committees at
+  **40+ sites of care**, tracking year-over-year change in recycling, pounds of
+  regulated medical waste per patient day, and recycling as a share of solid
+  waste to drive friendly competition between sites.
+- Automated monthly data validation with Python and BigQuery scheduled queries,
+  including outlier flagging, emails to data owners, and syncing data between
+  Google Sheets and BigQuery. This saves about **10 hours of manual work a
+  month**.
 
-*Tools: R, Python, SQL, Tableau, Excel*
+*Tools: Python, R, SQL, BigQuery, Tableau, Power BI, Excel, Google Workspace*
 
 ## Education
 
