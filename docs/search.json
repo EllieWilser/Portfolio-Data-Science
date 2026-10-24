@@ -131,7 +131,27 @@
     "href": "index.html",
     "title": "Ellie Wilser",
     "section": "",
-    "text": "Hi, I’m Ellie. I turn messy, real-world datasets into clean, documented analyses using R, SQL, and tidy data principles.",
+    "text": "I’m a sustainability analyst working where healthcare sustainability meets data science. At The Resource Group, an Ascension subsidiary, I lead data management for Ascension’s sustainability program. I calculate Scope 1, 2 and 3 emissions, build dashboards that help sites track their progress, and automate the review and auditing work behind our reporting.\nI’m passionate about sustainability, and I believe good data is what turns sustainability goals into measurable progress. My favorite work is finding the slow, manual process everyone has learned to live with, and rebuilding it so it’s faster, more accurate, and easier to trust.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html#what-im-exploring",
+    "href": "index.html#what-im-exploring",
+    "title": "Ellie Wilser",
+    "section": "What I’m exploring",
+    "text": "What I’m exploring\nIn my M.S. in Data Science at CUNY School of Professional Studies, I’m focused on physics-informed machine learning: models that combine the physical laws behind a system with real-world data, so they stay reliable even when data is limited. These models are a natural fit for complex systems like buildings, where both the physics and the data matter.\nI’m especially interested in using them to build digital twins, virtual copies of real buildings and systems. A digital twin lets you test a sustainability project before spending money on it. Projects I’d like to model include:\n\nHVAC upgrades and control strategies, such as scheduling and setpoint changes\nBuilding envelope improvements, like insulation, windows and roofing\nSolar and battery storage sizing\nEnergy demand forecasting and load shifting to lower peak usage and emissions\nCentral plant optimization, such as chillers, boilers and water use\n\nHealthcare facilities are among the most energy-intensive buildings, and they run 24/7. That makes them a high-impact place to get these decisions right.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html#highlights",
+    "href": "index.html#highlights",
+    "title": "Ellie Wilser",
+    "section": "Highlights",
+    "text": "Highlights\n\nCut proxy data in a carbon emissions inventory by 83% by building a Python process that matches utility accounts to property accounts.\nNamed Outstanding Student in Data Science at Indiana University East.\nLead data management for Ascension’s sustainability program: emissions accounting, dashboards, and automated data auditing.\n\nView my full resume →",
     "crumbs": [
       "About"
     ]
@@ -141,7 +161,7 @@
     "href": "index.html#skills",
     "title": "Ellie Wilser",
     "section": "Skills",
-    "text": "Skills\n\nLanguages: R, SQL\nTools: Quarto, tidyverse, PostgreSQL, Git/GitHub",
+    "text": "Skills\nR · Python · SQL · Tableau · Power BI · BigQuery · PyTorch · TensorFlow · GHG Protocol · GRI Standards",
     "crumbs": [
       "About"
     ]
@@ -151,7 +171,7 @@
     "href": "index.html#contact",
     "title": "Ellie Wilser",
     "section": "Contact",
-    "text": "Contact\nAdd your email or other contact info here.",
+    "text": "Contact\nelliewilser@gmail.com",
     "crumbs": [
       "About"
     ]
