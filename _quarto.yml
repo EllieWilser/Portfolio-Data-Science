@@ -6,10 +6,14 @@ website:
   title: "Ellie Wilser"
   sidebar:
     style: docked
-    search: true
+    search: false
+    collapse-level: 1
     contents:
-      - href: index.qmd
-        text: About
+      - section: "About"
+        href: index.qmd
+        contents:
+          - href: resume.qmd
+            text: Resume
       - href: projects.qmd
         text: Projects
       - href: blog.qmd
@@ -19,15 +23,12 @@ website:
         href: https://github.com/EllieWilser
         text: GitHub
       - icon: linkedin
-        href: https://www.linkedin.com/in/your-profile
+        href: https://www.linkedin.com/in/ellie-wilser
         text: LinkedIn
 
 format:
   html:
-    theme:
-      light: flatly
-      dark: darkly
-    css: styles.css
+    theme: [zephyr, theme.scss]
     code-fold: true
     link-external-newwindow: true
 

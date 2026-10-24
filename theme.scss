@@ -1,0 +1,46 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=DM+Sans:wght@400;600&display=swap');
+
+$body-bg: #fbf6ef;
+$body-color: #3b2f2a;
+$primary: #c2410c;
+$link-color: #c2410c;
+$font-family-sans-serif: "DM Sans", system-ui, sans-serif;
+$sidebar-bg: #f5eee4;
+$accent: $primary;
+$headings-font-family: "Fraunces", Georgia, serif;
+
+/*-- scss:rules --*/
+
+// Sidebar header: name in the heading font, GitHub/LinkedIn centered below it
+.sidebar-header { text-align: center; }
+.sidebar-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+
+  > a {
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: $body-color;
+  }
+}
+.sidebar-tools-main {
+  margin-left: 0;
+  justify-content: center;
+}
+
+// Highlight the page you're on
+.sidebar-navigation .sidebar-link.active,
+.sidebar-navigation .sidebar-item-section .sidebar-link.active {
+  color: $accent;
+  font-weight: 600;
+  background: rgba($accent, .1);
+  border-radius: .375rem;
+  padding: .2rem .5rem;
+  margin-left: -.5rem;
+}
+.sidebar-navigation .sidebar-item-toggle { color: $body-color; }
+.sidebar-tools-main .quarto-navigation-tool { font-size: 1.15rem; }

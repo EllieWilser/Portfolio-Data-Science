@@ -1,0 +1,19 @@
+---
+title: "Ellie Wilser"
+subtitle: "Data Analyst · R · SQL"
+pagetitle: "About"
+about:
+  template: solana
+---
+
+Hi, I'm Ellie. I turn messy, real-world datasets into clean, documented
+analyses using R, SQL, and tidy data principles.
+
+## Skills
+
+- **Languages:** R, SQL
+- **Tools:** Quarto, tidyverse, PostgreSQL, Git/GitHub
+
+## Contact
+
+Add your email or other contact info here.

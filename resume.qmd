@@ -1,0 +1,53 @@
+---
+title: "Resume"
+---
+
+<!--
+To offer a downloadable PDF: save it in this folder as resume.pdf, then
+uncomment the line below.
+
+[Download PDF](resume.pdf){.btn .btn-primary}
+-->
+
+## Experience
+
+**Sustainability Analyst (Data Management Lead)** · The Resource Group · Remote \
+*January 2025 – Present*
+
+- Lead data management for the Environmental Impact Office, the company's
+  sustainability team.
+- Reduced proxy data in the carbon emissions inventory by 83% from baseline by
+  building a Python process that matches utility accounts to property accounts.
+- Calculate Scope 1, 2 and 3 greenhouse gas emissions and maintain audit-ready
+  emissions reporting.
+- Build dashboards and visualizations that give site-level teams visibility into
+  their sustainability metrics and drive friendly competition between sites.
+- Automate data review, data auditing and recurring Google Workspace tasks to
+  cut manual work.
+
+*Tools: R, Python, SQL, Tableau, Excel*
+
+## Education
+
+**M.S., Data Science** · CUNY School of Professional Studies \
+*August 2026 – December 2029 (expected)*
+
+- Research focus: physics-informed machine learning.
+- Coursework: DATA 607, Data Acquisition and Management.
+
+**B.S., Data Science** · Indiana University East \
+*December 2024*
+
+- GPA: 3.7
+- Outstanding Student in Data Science award.
+
+## Skills
+
+- **Languages:** R, Python, SQL
+- **Python:** pandas, scikit-learn, TensorFlow, PyTorch
+- **R:** tidyverse, ggplot2, Quarto
+- **Machine learning:** physics-informed neural networks (PINNs)
+- **Statistical modeling:** time series forecasting
+- **Data and visualization:** Tableau, Power BI, Excel, PostgreSQL, BigQuery
+- **Workflow:** Git/GitHub, Google Workspace automation
+- **Sustainability:** GHG Protocol (Scope 1, 2 and 3 accounting), GRI Standards
