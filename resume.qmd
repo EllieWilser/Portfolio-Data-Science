@@ -29,10 +29,17 @@ uncomment the line below.
 
 ## Education
 
-**Degree, Field** · School \
-*Year*
+**M.S., Data Science** · School \
+*August 2026 – December 2029 (expected)*
 
-- Relevant coursework, e.g. DATA 607: Data Acquisition and Management.
+- Research focus: physics-informed machine learning.
+- Coursework: DATA 607, Data Acquisition and Management.
+
+**B.S., Data Science** · Indiana University \
+*Graduated Year*
+
+- GPA: 3.7
+- Outstanding Student in Data Science award.
 
 ## Skills
 
