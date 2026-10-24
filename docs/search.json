@@ -92,7 +92,7 @@
     "href": "resume.html#skills",
     "title": "Resume",
     "section": "Skills",
-    "text": "Skills\n\nLanguages: R, Python, SQL\nPython: pandas, scikit-learn, TensorFlow, PyTorch\nR: tidyverse, Quarto\nMachine learning: physics-informed neural networks (PINNs)\nData and visualization: Tableau, Excel, PostgreSQL\nWorkflow: Git/GitHub, Google Workspace automation\nSustainability: GHG Protocol (Scope 1, 2 and 3 accounting), GRI Standards",
+    "text": "Skills\n\nLanguages: R, Python, SQL\nPython: pandas, scikit-learn, TensorFlow, PyTorch\nR: tidyverse, ggplot2, Quarto\nMachine learning: physics-informed neural networks (PINNs)\nStatistical modeling: time series forecasting\nData and visualization: Tableau, Power BI, Excel, PostgreSQL, BigQuery\nWorkflow: Git/GitHub, Google Workspace automation\nSustainability: GHG Protocol (Scope 1, 2 and 3 accounting), GRI Standards",
     "crumbs": [
       "About",
       "Resume"

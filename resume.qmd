@@ -45,12 +45,9 @@ uncomment the line below.
 
 - **Languages:** R, Python, SQL
 - **Python:** pandas, scikit-learn, TensorFlow, PyTorch
-- **R:** tidyverse, Quarto
+- **R:** tidyverse, ggplot2, Quarto
 - **Machine learning:** physics-informed neural networks (PINNs)
-- **Data and visualization:** Tableau, Excel, PostgreSQL
+- **Statistical modeling:** time series forecasting
+- **Data and visualization:** Tableau, Power BI, Excel, PostgreSQL, BigQuery
 - **Workflow:** Git/GitHub, Google Workspace automation
 - **Sustainability:** GHG Protocol (Scope 1, 2 and 3 accounting), GRI Standards
-
-## Certifications
-
-- Certification name · Issuer · Year
