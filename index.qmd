@@ -1,53 +1,63 @@
 ---
 title: "Ellie Wilser"
-subtitle: "Sustainability · Data Science · Automation"
+subtitle: "Sustainability · Data Science · Creativity"
 pagetitle: "About"
 about:
   template: solana
 ---
 
-I'm a sustainability analyst working where healthcare sustainability meets data
+I'm a sustainability data analyst working where healthcare sustainability meets data
 science. At The Resource Group, an Ascension subsidiary, I lead data management
-for Ascension's sustainability program. I calculate Scope 1, 2 and 3 emissions,
-build dashboards that help sites track their progress, and automate the review
-and auditing work behind our reporting.
+for Ascension's sustainability program. This involves calculating Scope 1, 2 and 3 emissions,
+building dashboards that help sites track progress, and leading automation initiatives. 
 
-I'm passionate about sustainability, and I believe good data is what turns
-sustainability goals into measurable progress. My favorite work is finding the
-slow, manual process everyone has learned to live with, and rebuilding it so
-it's faster, more accurate, and easier to trust.
+With the rise of large language models, I think creativity has become one of the
+most important skills in data science. Generic solutions are now easy to come
+by, so the real value is in finding new ways to solve hard problems. That's what
+I want to bring to sustainability and energy reduction.
 
-## What I'm exploring
 
-In my M.S. in Data Science at CUNY School of Professional Studies, I'm focused
-on **physics-informed machine learning**: models that combine the physical laws
-behind a system with real-world data, so they stay reliable even when data is
-limited. These models are a natural fit for complex systems like buildings,
-where both the physics and the data matter.
+## My sustainability work at Ascension
 
-I'm especially interested in using them to build **digital twins**, virtual
+- Cut proxy data in the carbon emissions inventory by **83%** by building a
+  Python process that matches utility accounts to property accounts and by
+  sourcing better activity data.
+- Calculate Scope 1, 2 and 3 emissions, capturing 12 of 15 Scope 3 categories:
+  every category relevant to hospital operations.
+- Forecast carbon emissions and presented the results to leadership to inform
+  planning for a power purchase agreement.
+- Built a Tableau waste dashboard used by Environment of Care committees at 40+
+  sites of care.
+- Automated monthly data validation, saving about 10 hours of manual work a
+  month.
+
+[View my full resume →](resume.qmd)
+
+## What interests me in data science
+
+As I work through my M.S. in Data Science at CUNY School of Professional
+Studies, I'm most interested in lowering energy use in residential and
+commercial buildings, especially using data to help residents lower their
+energy bills.
+
+One approach I'm excited about is physics-informed machine learning: models
+that combine the physical laws behind a system with real-world data, so they
+stay reliable even when data is limited. These models are a natural fit for
+complex systems like buildings, where both the physics and the data matter.
+
+I'm especially interested in using these models to build digital twins, virtual
 copies of real buildings and systems. A digital twin lets you test a
-sustainability project before spending money on it. Projects I'd like to model
-include:
+sustainability project before investing. The possibilities with digital twins are endless. Some
+example use cases:
 
-- **HVAC upgrades and control strategies**, such as scheduling and setpoint changes
-- **Building envelope improvements**, like insulation, windows and roofing
-- **Solar and battery storage sizing**
-- **Energy demand forecasting and load shifting** to lower peak usage and emissions
-- **Central plant optimization**, such as chillers, boilers and water use
+- HVAC upgrades and control strategies, such as scheduling and setpoint changes
+- Building envelope improvements, like insulation, windows and roofing
+- Solar and battery storage sizing
+- Energy demand forecasting and load shifting to lower peak usage and emissions
+- Central plant optimization, such as chillers, boilers and water use
 
 Healthcare facilities are among the most energy-intensive buildings, and they
 run 24/7. That makes them a high-impact place to get these decisions right.
-
-## Highlights
-
-- Cut proxy data in a carbon emissions inventory by **83%** by building a Python
-  process that matches utility accounts to property accounts.
-- Named **Outstanding Student in Data Science** at Indiana University East.
-- Lead data management for Ascension's sustainability program: emissions
-  accounting, dashboards, and automated data auditing.
-
-[View my full resume →](resume.qmd)
 
 ## Skills
 
