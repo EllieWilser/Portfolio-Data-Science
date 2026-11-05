@@ -20,26 +20,25 @@ it's faster, more accurate, and easier to trust.
 ## What interests me in data science
 
 As I work through my M.S. in Data Science at CUNY School of Professional
-Studies, I'm most interested in **energy efficiency** and lowering electricity
+Studies, I'm most interested in energy efficiency and lowering electricity
 use in residential and commercial buildings. I especially want to focus on
-**helping residents reduce their electricity costs** through data-driven
-solutions.
+using data to help residents lower their electricity bills.
 
-One approach I'm excited about is **physics-informed machine learning**: models
+One approach I'm excited about is physics-informed machine learning: models
 that combine the physical laws behind a system with real-world data, so they
 stay reliable even when data is limited. These models are a natural fit for
 complex systems like buildings, where both the physics and the data matter.
 
-I'm especially interested in using them to build **digital twins**, virtual
+I'm especially interested in using them to build digital twins, virtual
 copies of real buildings and systems. A digital twin lets you test a
 sustainability project before spending money on it. Projects I'd like to model
 include:
 
-- **HVAC upgrades and control strategies**, such as scheduling and setpoint changes
-- **Building envelope improvements**, like insulation, windows and roofing
-- **Solar and battery storage sizing**
-- **Energy demand forecasting and load shifting** to lower peak usage and emissions
-- **Central plant optimization**, such as chillers, boilers and water use
+- HVAC upgrades and control strategies, such as scheduling and setpoint changes
+- Building envelope improvements, like insulation, windows and roofing
+- Solar and battery storage sizing
+- Energy demand forecasting and load shifting to lower peak usage and emissions
+- Central plant optimization, such as chillers, boilers and water use
 
 Healthcare facilities are among the most energy-intensive buildings, and they
 run 24/7. That makes them a high-impact place to get these decisions right.
@@ -48,7 +47,7 @@ run 24/7. That makes them a high-impact place to get these decisions right.
 
 - Cut proxy data in a carbon emissions inventory by **83%** by building a Python
   process that matches utility accounts to property accounts.
-- Named **Outstanding Student in Data Science** at Indiana University East.
+- Named Outstanding Student in Data Science at Indiana University East.
 - Lead data management for Ascension's sustainability program: emissions
   accounting, dashboards, and automated data auditing.
 
