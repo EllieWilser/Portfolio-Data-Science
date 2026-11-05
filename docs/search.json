@@ -137,21 +137,21 @@
     ]
   },
   {
-    "objectID": "index.html#what-interests-me-in-data-science",
-    "href": "index.html#what-interests-me-in-data-science",
+    "objectID": "index.html#my-sustainability-work-at-ascension",
+    "href": "index.html#my-sustainability-work-at-ascension",
     "title": "Ellie Wilser",
-    "section": "What interests me in data science",
-    "text": "What interests me in data science\nAs I work through my M.S. in Data Science at CUNY School of Professional Studies, I’m most interested in energy efficiency and lowering electricity use in residential and commercial buildings. I especially want to focus on using data to help residents lower their electricity bills.\nOne approach I’m excited about is physics-informed machine learning: models that combine the physical laws behind a system with real-world data, so they stay reliable even when data is limited. These models are a natural fit for complex systems like buildings, where both the physics and the data matter.\nI’m especially interested in using them to build digital twins, virtual copies of real buildings and systems. A digital twin lets you test a sustainability project before spending money on it. Projects I’d like to model include:\n\nHVAC upgrades and control strategies, such as scheduling and setpoint changes\nBuilding envelope improvements, like insulation, windows and roofing\nSolar and battery storage sizing\nEnergy demand forecasting and load shifting to lower peak usage and emissions\nCentral plant optimization, such as chillers, boilers and water use\n\nHealthcare facilities are among the most energy-intensive buildings, and they run 24/7. That makes them a high-impact place to get these decisions right.",
+    "section": "My sustainability work at Ascension",
+    "text": "My sustainability work at Ascension\n\nCut proxy data in the carbon emissions inventory by 83% by building a Python process that matches utility accounts to property accounts and by sourcing better activity data.\nCalculate Scope 1, 2 and 3 emissions, capturing 12 of 15 Scope 3 categories: every category relevant to hospital operations.\nForecast carbon emissions and presented the results to leadership to inform planning for a power purchase agreement.\nBuilt a Tableau waste dashboard used by Environment of Care committees at 40+ sites of care.\nAutomated monthly data validation, saving about 10 hours of manual work a month.\n\nView my full resume →",
     "crumbs": [
       "About"
     ]
   },
   {
-    "objectID": "index.html#highlights",
-    "href": "index.html#highlights",
+    "objectID": "index.html#what-interests-me-in-data-science",
+    "href": "index.html#what-interests-me-in-data-science",
     "title": "Ellie Wilser",
-    "section": "Highlights",
-    "text": "Highlights\n\nCut proxy data in a carbon emissions inventory by 83% by building a Python process that matches utility accounts to property accounts.\nNamed Outstanding Student in Data Science at Indiana University East.\nLead data management for Ascension’s sustainability program: emissions accounting, dashboards, and automated data auditing.\n\nView my full resume →",
+    "section": "What interests me in data science",
+    "text": "What interests me in data science\nAs I work through my M.S. in Data Science at CUNY School of Professional Studies, I’m most interested in energy efficiency and lowering energy use in residential and commercial buildings. I especially want to focus on using data to help residents lower their energy bills.\nOne approach I’m excited about is physics-informed machine learning: models that combine the physical laws behind a system with real-world data, so they stay reliable even when data is limited. These models are a natural fit for complex systems like buildings, where both the physics and the data matter.\nI’m especially interested in using them to build digital twins, virtual copies of real buildings and systems. A digital twin lets you test a sustainability project before spending money on it. Projects I’d like to model include:\n\nHVAC upgrades and control strategies, such as scheduling and setpoint changes\nBuilding envelope improvements, like insulation, windows and roofing\nSolar and battery storage sizing\nEnergy demand forecasting and load shifting to lower peak usage and emissions\nCentral plant optimization, such as chillers, boilers and water use\n\nHealthcare facilities are among the most energy-intensive buildings, and they run 24/7. That makes them a high-impact place to get these decisions right.",
     "crumbs": [
       "About"
     ]
