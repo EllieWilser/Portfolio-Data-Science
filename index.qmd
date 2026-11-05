@@ -17,12 +17,18 @@ sustainability goals into measurable progress. My favorite work is finding the
 slow, manual process everyone has learned to live with, and rebuilding it so
 it's faster, more accurate, and easier to trust.
 
+## My master's focus
+
+My M.S. in Data Science at CUNY School of Professional Studies centers on
+**energy efficiency** and lowering electricity use in both residential and
+commercial buildings. My strongest emphasis is on households: using data-driven
+solutions to **help residents reduce their electricity costs**.
+
 ## What I'm exploring
 
-In my M.S. in Data Science at CUNY School of Professional Studies, I'm focused
-on **physics-informed machine learning**: models that combine the physical laws
-behind a system with real-world data, so they stay reliable even when data is
-limited. These models are a natural fit for complex systems like buildings,
+The main approach I'm exploring for this work is **physics-informed machine
+learning**: models that combine the physical laws behind a system with
+real-world data, so they stay reliable even when data is limited. These models are a natural fit for complex systems like buildings,
 where both the physics and the data matter.
 
 I'm especially interested in using them to build **digital twins**, virtual
