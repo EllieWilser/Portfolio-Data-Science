@@ -137,21 +137,11 @@
     ]
   },
   {
-    "objectID": "index.html#my-masters-focus",
-    "href": "index.html#my-masters-focus",
+    "objectID": "index.html#what-interests-me-in-data-science",
+    "href": "index.html#what-interests-me-in-data-science",
     "title": "Ellie Wilser",
-    "section": "My master’s focus",
-    "text": "My master’s focus\nMy M.S. in Data Science at CUNY School of Professional Studies centers on energy efficiency and lowering electricity use in both residential and commercial buildings. My strongest emphasis is on households: using data-driven solutions to help residents reduce their electricity costs.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "index.html#what-im-exploring",
-    "href": "index.html#what-im-exploring",
-    "title": "Ellie Wilser",
-    "section": "What I’m exploring",
-    "text": "What I’m exploring\nThe main approach I’m exploring for this work is physics-informed machine learning: models that combine the physical laws behind a system with real-world data, so they stay reliable even when data is limited. These models are a natural fit for complex systems like buildings, where both the physics and the data matter.\nI’m especially interested in using them to build digital twins, virtual copies of real buildings and systems. A digital twin lets you test a sustainability project before spending money on it. Projects I’d like to model include:\n\nHVAC upgrades and control strategies, such as scheduling and setpoint changes\nBuilding envelope improvements, like insulation, windows and roofing\nSolar and battery storage sizing\nEnergy demand forecasting and load shifting to lower peak usage and emissions\nCentral plant optimization, such as chillers, boilers and water use\n\nHealthcare facilities are among the most energy-intensive buildings, and they run 24/7. That makes them a high-impact place to get these decisions right.",
+    "section": "What interests me in data science",
+    "text": "What interests me in data science\nAs I work through my M.S. in Data Science at CUNY School of Professional Studies, I’m most interested in energy efficiency and lowering electricity use in residential and commercial buildings. I especially want to focus on helping residents reduce their electricity costs through data-driven solutions.\nOne approach I’m excited about is physics-informed machine learning: models that combine the physical laws behind a system with real-world data, so they stay reliable even when data is limited. These models are a natural fit for complex systems like buildings, where both the physics and the data matter.\nI’m especially interested in using them to build digital twins, virtual copies of real buildings and systems. A digital twin lets you test a sustainability project before spending money on it. Projects I’d like to model include:\n\nHVAC upgrades and control strategies, such as scheduling and setpoint changes\nBuilding envelope improvements, like insulation, windows and roofing\nSolar and battery storage sizing\nEnergy demand forecasting and load shifting to lower peak usage and emissions\nCentral plant optimization, such as chillers, boilers and water use\n\nHealthcare facilities are among the most energy-intensive buildings, and they run 24/7. That makes them a high-impact place to get these decisions right.",
     "crumbs": [
       "About"
     ]
