@@ -1,0 +1,92 @@
+---
+title: "Hybrid Physics + ML Thermal Model of a Home"
+description: "A 1R1C thermal model of a house, corrected by a small neural network: a mini digital twin for building energy."
+date: 2026-11-18
+categories: [Python, PyTorch, physics-informed ML, building energy]
+draft: true          # remove when the write-up is ready to publish
+jupyter: python3
+execute:
+  echo: true
+---
+
+::: {.callout-note}
+**Work in progress.** This page is the project plan. Each section below gets filled in
+as the work is done. `draft: true` keeps it off the live site until it's ready.
+:::
+
+## Question
+
+Can a simple physics model of a house's heat balance, plus a small neural network that
+learns what the physics misses, predict indoor temperature better than either one alone,
+and stay sensible in weather it has never seen?
+
+## Approach
+
+| Model | What it is | Why include it |
+|---|---|---|
+| Physics only | 1R1C ODE: `C dT/dt = (T_out - T_in)/R + Q_hvac + a·I_sol` | Interpretable baseline. R and C mean something physical. |
+| ML only | MLP or LSTM on the same inputs | Black-box baseline |
+| Hybrid | 1R1C + NN residual term, trained end to end in PyTorch | The point of the project |
+
+## Plan
+
+**1. Data (week 1)**
+
+- Start with **synthetic data** from `rc_model.py`: a house with known R, C and solar
+  aperture, plus a hidden occupancy heat gain the physics model doesn't know about.
+- Swap the sinusoidal weather for real hourly weather: NOAA ISD temperature and NSRDB solar
+  for one city (e.g. New York).
+- Request access to the **ecobee Donate Your Data** dataset (smart thermostat indoor temp +
+  HVAC runtime). If it arrives in time, repeat the analysis on a handful of real homes.
+
+**2. Physics baseline (week 1–2)**
+
+- Fit R, C, a_sol with `scipy.optimize.least_squares` (done in `rc_model.py`).
+- Show the fitted values are *biased* when occupancy gains are hidden, which motivates the hybrid.
+
+**3. ML baseline (week 2)**
+
+- MLP or small LSTM predicting next-step indoor temperature, same inputs, same train/test split.
+
+**4. Hybrid model (week 3)**
+
+- PyTorch module: `dT/dt = physics(T, inputs; R, C, a_sol) + NN(inputs, hour_of_day)`.
+- R, C, a_sol are learnable parameters, initialised from step 2.
+- Roll out multi-step predictions and train on the rollout error. Keep the NN small and
+  regularise it so the physics does most of the work.
+
+**5. Evaluation (week 4)**
+
+- Rolling 24-hour-ahead RMSE on a held-out period, for all three models.
+- **Extrapolation test:** train on mild weeks, test on a cold snap. This is where hybrids
+  usually beat pure ML.
+- Recovered vs true R and C (synthetic data); what the NN residual learned versus the
+  hidden occupancy signal.
+
+**6. Write-up**
+
+- Fill in this page with figures, remove `draft: true`, render, and commit `docs/` and `_freeze/`.
+
+## Results
+
+*To come.*
+
+```{python}
+#| eval: false
+from rc_model import synthetic_house, fit_1r1c
+
+d = synthetic_house()
+fit = fit_1r1c(d["t_in"], d["t_out"], d["q_hvac"], d["i_sol"], d["dt_h"])
+fit
+```
+
+## Running it locally
+
+```bash
+pip install -r requirements.txt
+python projects/rc-thermal-hybrid/rc_model.py   # quick sanity check
+quarto preview                                   # renders Python pages via Jupyter
+```
+
+The site uses `freeze: auto`, so Python code only re-runs when this page changes. GitHub
+Pages serves the already-rendered output in `docs/`.

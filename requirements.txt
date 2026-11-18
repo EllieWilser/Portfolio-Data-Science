@@ -1,0 +1,7 @@
+# Python packages for the Python-based project pages (Quarto jupyter engine)
+jupyter
+numpy
+pandas
+scipy
+torch
+matplotlib
