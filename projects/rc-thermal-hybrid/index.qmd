@@ -28,44 +28,45 @@ and stay sensible in weather it has never seen?
 | ML only | MLP or LSTM on the same inputs | Black-box baseline |
 | Hybrid | 1R1C + NN residual term, trained end to end in PyTorch | The point of the project |
 
-## Plan
+## Plan: 2 weeks, Nov 17 to Dec 1, 2026
 
-**1. Data (week 1)**
+Assumes about 1 to 2 hours on weeknights and a longer block on weekends. Uses **synthetic
+house data driven by real New York weather**, so nothing waits on a data request.
+Thanksgiving is built in as a buffer.
 
-- Start with **synthetic data** from `rc_model.py`: a house with known R, C and solar
-  aperture, plus a hidden occupancy heat gain the physics model doesn't know about.
-- Swap the sinusoidal weather for real hourly weather: NOAA ISD temperature and NSRDB solar
-  for one city (e.g. New York).
-- Request access to the **ecobee Donate Your Data** dataset (smart thermostat indoor temp +
-  HVAC runtime). If it arrives in time, repeat the analysis on a handful of real homes.
+### Week 1: data and baselines
 
-**2. Physics baseline (week 1–2)**
+| Day | Task | Done when |
+|---|---|---|
+| Tue 11/17 – Wed 11/18 | **Setup in Positron.** Open the repo folder, create a virtual environment (`python -m venv .venv`), pick it as the interpreter, run `pip install -r requirements.txt`. Run `rc_model.py`, then `quarto preview` and open this page. (Optional: request ecobee Donate Your Data access, as a later extension.) | `rc_model.py` prints true vs fitted R, C |
+| Thu 11/19 | **Real weather.** Download hourly NYC outdoor temperature and shortwave solar radiation for Jan to Feb 2025 from the free Open-Meteo historical API (no key needed). Save to `data/nyc_weather.csv`. | CSV with time, temp, solar |
+| Fri 11/20 | **Synthetic house on real weather.** Change `synthetic_house()` to take the weather CSV. Make ~8 weeks of data. Split into train (mild weeks), validation, and test (the coldest week, as a "cold snap"). | Plot of indoor vs outdoor temp |
+| Sat 11/21 | **Physics baseline.** Fit R, C, a_sol on train. Plot predicted vs actual on test. Table of fitted vs true parameters (shows the bias from hidden occupancy gains). | Figure 1 + table 1 |
+| Sun 11/22 | **ML baseline.** Small MLP in PyTorch predicting next-step indoor temp from (T_in, T_out, Q_hvac, I_sol, hour of day). Evaluate a 24-hour rollout on test. | Test RMSE for ML-only |
 
-- Fit R, C, a_sol with `scipy.optimize.least_squares` (done in `rc_model.py`).
-- Show the fitted values are *biased* when occupancy gains are hidden, which motivates the hybrid.
+### Week 2: hybrid model and write-up
 
-**3. ML baseline (week 2)**
+| Day | Task | Done when |
+|---|---|---|
+| Mon 11/23 | **Hybrid model, part 1.** PyTorch module: Euler step with learnable R, C, a_sol (initialised from Saturday's fit) plus a small NN residual term. | Model trains without errors |
+| Tue 11/24 | **Hybrid model, part 2.** Train on 24-hour rollouts, add weight decay on the NN, tune lightly on validation. | Test RMSE for hybrid |
+| Wed 11/25 | **Evaluation.** RMSE table for all 3 models on the cold-snap week. Recovered R and C vs true. Plot what the NN residual learned against the hidden occupancy signal. | Figures 2–4 + table 2 |
+| Thu 11/26 – Fri 11/27 | **Thanksgiving buffer.** Catch up only if behind. | |
+| Sat 11/28 | **Write-up, part 1.** Fill in Question, Approach, Results on this page. Code chunks pull from `rc_model.py`. | Page renders in `quarto preview` |
+| Sun 11/29 | **Write-up, part 2.** Discussion: when the hybrid helps, limitations (synthetic data, 1R1C), next steps (ecobee data, 2R2C). | Full draft |
+| Mon 11/30 | **Polish and publish.** Remove `draft: true`, run `quarto render`, delete the example project placeholders, commit `docs/` and `_freeze/`. | Live on GitHub Pages |
+| Tue 12/1 | **Done.** Share the link (LinkedIn, resume). | |
 
-- MLP or small LSTM predicting next-step indoor temperature, same inputs, same train/test split.
+### If you fall behind, cut in this order
 
-**4. Hybrid model (week 3)**
+1. Skip the ML-only baseline (compare physics vs hybrid only).
+2. Skip the "what the NN learned" plot.
+3. Use the sinusoidal weather already in `rc_model.py` instead of real weather.
 
-- PyTorch module: `dT/dt = physics(T, inputs; R, C, a_sol) + NN(inputs, hour_of_day)`.
-- R, C, a_sol are learnable parameters, initialised from step 2.
-- Roll out multi-step predictions and train on the rollout error. Keep the NN small and
-  regularise it so the physics does most of the work.
+### Later extensions (not in the 2 weeks)
 
-**5. Evaluation (week 4)**
-
-- Rolling 24-hour-ahead RMSE on a held-out period, for all three models.
-- **Extrapolation test:** train on mild weeks, test on a cold snap. This is where hybrids
-  usually beat pure ML.
-- Recovered vs true R and C (synthetic data); what the NN residual learned versus the
-  hidden occupancy signal.
-
-**6. Write-up**
-
-- Fill in this page with figures, remove `draft: true`, render, and commit `docs/` and `_freeze/`.
+- Repeat on real homes from the ecobee Donate Your Data set.
+- 2R2C model (separate air and wall/mass temperatures).
 
 ## Results
 

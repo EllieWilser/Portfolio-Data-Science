@@ -2,6 +2,7 @@
 jupyter
 numpy
 pandas
+requests
 scipy
 torch
 matplotlib
