@@ -12,7 +12,11 @@ A 1R1C ("one resistor, one capacitor") model of a house:
     I_sol  global horizontal solar irradiance [kW/m2]
     a_sol  effective solar aperture [m2]
 
-The neural-network residual (step 4 of the plan) is added on top of this later.
+Real data for a UK home comes from `refit_data.py` (REFIT Smart Home dataset), at
+30-minute steps, so call these functions with dt_h=0.5 for REFIT.
+`synthetic_house()` stays as a quick check that the fitting code recovers known values.
+
+The neural-network residual (week 2 of the plan) is added on top of this later.
 """
 
 from __future__ import annotations
@@ -65,7 +69,7 @@ def fit_1r1c(
 def synthetic_house(days: int = 14, dt_h: float = 0.25, seed: int = 0) -> dict:
     """Make a toy dataset with known R, C, a_sol so we can check the fit recovers them.
 
-    Uses sinusoidal weather for now; step 1 of the plan swaps in real NOAA/NSRDB weather.
+    Uses made-up sinusoidal weather: the real-home data is in refit_data.py.
     Includes a hidden 'internal gains' signal (occupancy) that the 1R1C model does not
     know about: this is exactly what the neural-network residual should learn later.
     """
@@ -104,7 +108,22 @@ def synthetic_house(days: int = 14, dt_h: float = 0.25, seed: int = 0) -> dict:
 
 
 if __name__ == "__main__":
+    # 1. Sanity check on fake data where we know the true answer.
     d = synthetic_house()
     fit = fit_1r1c(d["t_in"], d["t_out"], d["q_hvac"], d["i_sol"], d["dt_h"])
-    print("true:", d["true_params"])
-    print("fit: ", {k: round(float(v), 3) for k, v in fit.items()})
+    print("synthetic, true:", d["true_params"])
+    print("synthetic, fit: ", {k: round(float(v), 3) for k, v in fit.items()})
+
+    # 2. A real home, if the REFIT data has been downloaded (see refit_data.py).
+    try:
+        from refit_data import clean_for_model, load_home
+
+        df = clean_for_model(load_home("Building01"))
+        train = df["2013-11-04":"2013-12-31"]
+        fit = fit_1r1c(
+            train["t_in"].values, train["t_out"].values, train["q_heat"].values,
+            train["i_sol"].values, dt_h=0.5, x0=(5.0, 10.0, 5.0),
+        )
+        print("REFIT Building01, fit:", {k: round(float(v), 3) for k, v in fit.items()})
+    except FileNotFoundError as e:
+        print("(skipping REFIT:", e, ")")

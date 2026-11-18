@@ -12,3 +12,6 @@
 # Python
 .venv/
 __pycache__/
+
+# Downloaded data (large; get it with refit_data.download_refit())
+projects/rc-thermal-hybrid/data/

@@ -20,29 +20,71 @@ Can a simple physics model of a house's heat balance, plus a small neural networ
 learns what the physics misses, predict indoor temperature better than either one alone,
 and stay sensible in weather it has never seen?
 
+## Data
+
+**REFIT Smart Home dataset** (Firth et al., Loughborough University, 2017;
+[doi:10.17028/rd.lboro.2070091](https://doi.org/10.17028/rd.lboro.2070091), CC BY 4.0).
+Twenty homes near Loughborough, UK, monitored from October 2013 to April 2015.
+
+| What | Detail | Used as |
+|---|---|---|
+| Room air temperature | Every room, 15 or 30 min | `t_in`: volume-weighted average of heated rooms |
+| Gas meter | m³ per 30 min | `q_heat` (kW): gas × 11.2 kWh/m³ × 85% boiler efficiency |
+| Campus weather station | Air temp, horizontal solar, wind; 15 min; next to the homes | `t_out`, `i_sol` |
+| Building survey | Room sizes, wall type, age, boiler | Context and sanity checks on R and C |
+
+Everything is resampled to 30-minute steps. We use the **winter before the smart-home
+kit was installed (4 Nov 2013 to 31 Mar 2014)**, when heating was run the usual way.
+
+**Home choice.** `refit_data.home_coverage()` ranks the homes by how complete their
+data is that winter. Four homes are 98 to 99.7% complete: **Building01** (main home,
+detached 1970s cavity-wall house, 10 heated rooms), Building08 and Building07 (similar
+houses, used to check the method carries over), and Building02. Building03 and
+Building05 have no gas data that winter, so they are out.
+
+The raw data is about 100 MB zipped (1.3 GB unzipped), so it is **not stored in this
+repo**. `refit_data.download_refit()` downloads it into `data/refit/` (git-ignored).
+
+**Known limitations.** Gas also heats hot water and sometimes cooking, so `q_heat`
+over-counts space heating; the house is treated as one zone; 2013/14 was a mild winter
+(coldest week averaged about 4.7 °C). These are exactly the gaps the neural-network
+residual is there to absorb, and the write-up should say so.
+
 ## Approach
 
 | Model | What it is | Why include it |
 |---|---|---|
-| Physics only | 1R1C ODE: `C dT/dt = (T_out - T_in)/R + Q_hvac + a·I_sol` | Interpretable baseline. R and C mean something physical. |
-| ML only | MLP or LSTM on the same inputs | Black-box baseline |
+| Physics only | 1R1C ODE: `C dT/dt = (T_out - T_in)/R + Q_heat + a·I_sol` | Interpretable baseline. R and C mean something physical. |
+| ML only | Small MLP on the same inputs | Black-box baseline |
 | Hybrid | 1R1C + NN residual term, trained end to end in PyTorch | The point of the project |
+
+**Split (Building01, 30-min steps):**
+
+| Set | Dates | Why |
+|---|---|---|
+| Train | 4 Nov to 31 Dec 2013 | Two months of ordinary winter |
+| Validation | 1 to 19 Jan 2014 | Tuning, early stopping |
+| Test | 20 Jan to 2 Feb 2014 | Includes the coldest week of that winter (about 4.7 °C average) |
+| Extra test | March 2014 | Milder and sunnier: does the model hold up in different weather? |
+
+A first check (Nov to Dec fit, physics only) gives R ≈ 5 °C/kW and C ≈ 10 kWh/°C for
+Building01, which is about 200 W/K of heat loss: sensible for a 1970s detached house.
+That fit is about 0.8 °C RMSE, so there is room for the hybrid to improve on it.
 
 ## Plan: 2 weeks, Nov 17 to Dec 1, 2026
 
-Assumes about 1 to 2 hours on weeknights and a longer block on weekends. Uses **synthetic
-house data driven by real New York weather**, so nothing waits on a data request.
+Assumes about 1 to 2 hours on weeknights and a longer block on weekends.
 Thanksgiving is built in as a buffer.
 
 ### Week 1: data and baselines
 
 | Day | Task | Done when |
 |---|---|---|
-| Tue 11/17 – Wed 11/18 | **Setup in Positron.** Open the repo folder, create a virtual environment (`python -m venv .venv`), pick it as the interpreter, run `pip install -r requirements.txt`. Run `rc_model.py`, then `quarto preview` and open this page. (Optional: request ecobee Donate Your Data access, as a later extension.) | `rc_model.py` prints true vs fitted R, C |
-| Thu 11/19 | **Real weather.** Download hourly NYC outdoor temperature and shortwave solar radiation for Jan to Feb 2025 from the free Open-Meteo historical API (no key needed). Save to `data/nyc_weather.csv`. | CSV with time, temp, solar |
-| Fri 11/20 | **Synthetic house on real weather.** Change `synthetic_house()` to take the weather CSV. Make ~8 weeks of data. Split into train (mild weeks), validation, and test (the coldest week, as a "cold snap"). | Plot of indoor vs outdoor temp |
-| Sat 11/21 | **Physics baseline.** Fit R, C, a_sol on train. Plot predicted vs actual on test. Table of fitted vs true parameters (shows the bias from hidden occupancy gains). | Figure 1 + table 1 |
-| Sun 11/22 | **ML baseline.** Small MLP in PyTorch predicting next-step indoor temp from (T_in, T_out, Q_hvac, I_sol, hour of day). Evaluate a 24-hour rollout on test. | Test RMSE for ML-only |
+| Tue 11/17 – Wed 11/18 | **Setup in Positron.** Open the repo folder, create a virtual environment (`python -m venv .venv`), pick it as the interpreter, run `pip install -r requirements.txt`. Run `rc_model.py`. | Synthetic fit prints |
+| Thu 11/19 | **Get REFIT.** In Positron's console, from `projects/rc-thermal-hybrid/`: `import refit_data as r`, then `r.download_refit()` (~100 MB) and `r.extract_subset()` (~1 min, makes a small `refit_subset.pkl`). Run `r.home_coverage()`. | Coverage table; Building01 near the top |
+| Fri 11/20 | **Look at the data.** `df = r.load_home("Building01")`. Plot a week of `t_in`, `t_out` and `q_heat` together; plot each room's temperature. Then `r.clean_for_model(df)` and make the train/validation/test split above. | Figure 1: a week of real data |
+| Sat 11/21 | **Physics baseline.** Fit R, C, a_sol on train (`dt_h=0.5`). Simulate the test fortnight, plot predicted vs actual. Compare R with the building survey. | Figure 2 + table 1 |
+| Sun 11/22 | **ML baseline.** Small MLP in PyTorch predicting next-step `t_in` from (`t_in`, `t_out`, `q_heat`, `i_sol`, hour of day). Evaluate 24-hour rollouts on test. | Test RMSE for ML-only |
 
 ### Week 2: hybrid model and write-up
 
@@ -50,23 +92,24 @@ Thanksgiving is built in as a buffer.
 |---|---|---|
 | Mon 11/23 | **Hybrid model, part 1.** PyTorch module: Euler step with learnable R, C, a_sol (initialised from Saturday's fit) plus a small NN residual term. | Model trains without errors |
 | Tue 11/24 | **Hybrid model, part 2.** Train on 24-hour rollouts, add weight decay on the NN, tune lightly on validation. | Test RMSE for hybrid |
-| Wed 11/25 | **Evaluation.** RMSE table for all 3 models on the cold-snap week. Recovered R and C vs true. Plot what the NN residual learned against the hidden occupancy signal. | Figures 2–4 + table 2 |
+| Wed 11/25 | **Evaluation.** RMSE table for all 3 models on the test fortnight and March. Plot the NN residual by hour of day (does it look like occupancy, cooking and hot-water use?). Repeat the physics and hybrid fits on Building08 and Building07. | Figures 3–4 + table 2 |
 | Thu 11/26 – Fri 11/27 | **Thanksgiving buffer.** Catch up only if behind. | |
-| Sat 11/28 | **Write-up, part 1.** Fill in Question, Approach, Results on this page. Code chunks pull from `rc_model.py`. | Page renders in `quarto preview` |
-| Sun 11/29 | **Write-up, part 2.** Discussion: when the hybrid helps, limitations (synthetic data, 1R1C), next steps (ecobee data, 2R2C). | Full draft |
-| Mon 11/30 | **Polish and publish.** Remove `draft: true`, run `quarto render`, delete the example project placeholders, commit `docs/` and `_freeze/`. | Live on GitHub Pages |
+| Sat 11/28 | **Write-up, part 1.** Fill in Data, Approach, Results on this page. Code chunks import from `refit_data.py` and `rc_model.py`. | Page renders in `quarto preview` |
+| Sun 11/29 | **Write-up, part 2.** Discussion: when the hybrid helps, limitations (gas includes hot water, one zone, mild winter), next steps. | Full draft |
+| Mon 11/30 | **Polish and publish.** Remove `draft: true`, run `quarto render` on your Mac (the data is local), delete the example project placeholders, commit `docs/` and `_freeze/`. | Live on GitHub Pages |
 | Tue 12/1 | **Done.** Share the link (LinkedIn, resume). | |
 
 ### If you fall behind, cut in this order
 
 1. Skip the ML-only baseline (compare physics vs hybrid only).
-2. Skip the "what the NN learned" plot.
-3. Use the sinusoidal weather already in `rc_model.py` instead of real weather.
+2. Skip the second and third homes (Building08, Building07).
+3. Skip the "what the NN learned" plot.
 
 ### Later extensions (not in the 2 weeks)
 
-- Repeat on real homes from the ecobee Donate Your Data set.
-- 2R2C model (separate air and wall/mass temperatures).
+- Winter 2014/15, after the smart thermostats and radiator valves went in: does the model still work when the controls change?
+- 2R2C model (separate air and wall/mass temperatures), using per-room data.
+- Repeat on US homes from the ecobee Donate Your Data set (needs a data request).
 
 ## Results
 
@@ -74,10 +117,13 @@ Thanksgiving is built in as a buffer.
 
 ```{python}
 #| eval: false
-from rc_model import synthetic_house, fit_1r1c
+from refit_data import load_home, clean_for_model
+from rc_model import fit_1r1c
 
-d = synthetic_house()
-fit = fit_1r1c(d["t_in"], d["t_out"], d["q_hvac"], d["i_sol"], d["dt_h"])
+df = clean_for_model(load_home("Building01"))
+train = df["2013-11-04":"2013-12-31"]
+fit = fit_1r1c(train.t_in.values, train.t_out.values, train.q_heat.values,
+               train.i_sol.values, dt_h=0.5, x0=(5.0, 10.0, 5.0))
 fit
 ```
 
@@ -85,9 +131,16 @@ fit
 
 ```bash
 pip install -r requirements.txt
-python projects/rc-thermal-hybrid/rc_model.py   # quick sanity check
-quarto preview                                   # renders Python pages via Jupyter
+cd projects/rc-thermal-hybrid
+python -c "import refit_data as r; r.download_refit(); r.extract_subset()"   # once
+python refit_data.py      # coverage table for all 20 homes
+python rc_model.py        # synthetic check + first REFIT fit
+cd ../.. && quarto preview
 ```
 
 The site uses `freeze: auto`, so Python code only re-runs when this page changes. GitHub
-Pages serves the already-rendered output in `docs/`.
+Pages serves the already-rendered output in `docs/`, so the REFIT data never has to be on GitHub.
+
+REFIT data: Firth, S., Kane, T., Dimitriou, V., Hassan, T., Fouchal, F., Coleman, M. and
+Webb, L. (2017). *REFIT Smart Home dataset.* Loughborough University.
+<https://doi.org/10.17028/rd.lboro.2070091>. Licensed CC BY 4.0.
