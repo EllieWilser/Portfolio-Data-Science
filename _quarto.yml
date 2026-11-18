@@ -33,6 +33,7 @@ format:
     link-external-newwindow: true
 
 execute:
+  freeze: auto
   echo: false
   warning: false
   message: false
